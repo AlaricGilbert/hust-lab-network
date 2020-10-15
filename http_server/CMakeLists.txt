@@ -1,0 +1,6 @@
+include_directories(include)
+aux_source_directory(src http_server_src)
+add_executable(http_server ${http_server_src})
+if(WIN32)
+    target_link_libraries(http_server wsock32 ws2_32)
+endif()
